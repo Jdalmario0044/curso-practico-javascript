@@ -29,19 +29,49 @@ function perimetroCirculo(radio) {
 function areaCirculo(radio) {
     return (radio * radio) * PI;
 }
-//Interacción con el archivo de figuras.html
-function calcularPerimetroCuadrado() {
-    const input= document.getElementById("InputCuadrado");
-    const value = input.value;
 
-    const perimetro= perimetroCuadrado(value);
-    alert(perimetro);
+//Interacción con el archivo de figuras.html
+
+//Variables del cuadrado
+const inputCuadrado= document.getElementById("InputCuadrado");
+const ladosCuadrado = parseInt(inputCuadrado.value);
+//Variables del triángulo
+const inputLadoA= document.getElementById("InputTrianguloA");
+const ladoA= parseInt(inputLadoA.value);
+const inputLadoB= document.getElementById("InputTrianguloB");
+const ladoB= parseInt(inputLadoB.value);
+const inputBase= document.getElementById("InputTrianguloBase");
+const base= parseInt(inputBase.value);
+const inputAltura= document.getElementById("InputTrianguloAltura");
+const altura= parseInt(inputAltura.value);
+//Variables del círculo
+const inputRadio= document.getElementById("InputRadioCirculo");
+const radio= parseInt(inputRadio.value);
+//Funciones para el área y perímetro del cuadrado
+function calcularPerimetroCuadrado() {
+    const perimetro= perimetroCuadrado(ladosCuadrado);
+    alert("El perímetro es de: " + perimetro);
 }
 
 function calcularAreaCuadrado() {
-    const input= document.getElementById("InputCuadrado");
-    const value = input.value;
-
-    const area= areaCuadrado(value);
-    alert(area);
+    const area= areaCuadrado(ladosCuadrado);
+    alert("El área es de: " + area);
+}
+//Funciones para el área y perímetro del triángulo
+function calcularPerimetroTriangulo() {
+    const perimetro= perimetroTriangulo(ladoA, ladoB, base);
+    alert("El perímetro es de: " + perimetro);
+}
+function calcularAreaTriangulo() {
+    const area= areaTriangulo(base, altura);
+    alert("El área es de: " + area);
+}
+//Funciones para el área y perímetro del círculo
+function calcularPerimetroCirculo () {
+    const perimetro= perimetroCirculo(radio);
+    alert("El perímetro es de: " + perimetro);
+}
+function calcularAreaCirculo () {
+    const area= areaCirculo(radio);
+    alert("El área es de: " + area);
 }
